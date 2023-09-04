@@ -23,9 +23,9 @@ cv.partition.spls <- function(arg.vec, df.partition, ncomp, mode,Y.colnames,trac
   xtrain <- t(apply(xtrain, 1, function(x) x-xmeans))
   xtest <- t(apply(xtest, 1, function(x) x-xmeans))
   
-  U <- plss::spls.r(X=xtrain,Y=ytrain,ncomp=ncomp,mode=mode,lam1=lam1,lam2=lam2,trace=trace,niter=niter,threshold = threshold)$U
-  mod <- plss::model.build.spls(Y=as.matrix(ytrain),X=as.matrix(xtrain),U=U,ncomp=ncomp,Y.colnames=Y.colnames)
-  metric <- plss::model.metric.pls(Y=as.matrix(ytest),X=as.matrix(xtest),mod=mod,U=U,metric=metric,ncomp=ncomp,Y.colnames = Y.colnames)
+  U <- PLSS::spls.r(X=xtrain,Y=ytrain,ncomp=ncomp,mode=mode,lam1=lam1,lam2=lam2,trace=trace,niter=niter,threshold = threshold)$U
+  mod <- PLSS::model.build.spls(Y=as.matrix(ytrain),X=as.matrix(xtrain),U=U,ncomp=ncomp,Y.colnames=Y.colnames)
+  metric <- PLSS::model.metric.pls(Y=as.matrix(ytest),X=as.matrix(xtest),mod=mod,U=U,metric=metric,ncomp=ncomp,Y.colnames = Y.colnames)
   return(metric)
   
 }
