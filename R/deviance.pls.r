@@ -3,6 +3,6 @@
 #' @export
 
 deviance.pls <- function(Y,Yhat){
-  dev.vec <- plss::deviance.calc(Yhat,Y)
+  dev.vec <- PLSS::deviance.calc(Yhat,Y)
   return(mean(dev.vec))
 }
