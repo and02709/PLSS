@@ -45,7 +45,7 @@ cv.spls <- function(X,Y,ncomp=1,mode=NULL,n.folds=5,n.lam1=NULL,n.lam2=NULL,X.co
   df <- data.frame(Y,X)
   df.partition <- groupdata2::fold(data=df,k=n.folds)
   
-  lam.lists <- plss::uv.max.step(X=X,Y=Y,n.lam1=n.lam1,n.lam2=n.lam2,eps=eps)
+  lam.lists <- uv.max.step(X=X,Y=Y,n.lam1=n.lam1,n.lam2=n.lam2,eps=eps)
   lam1 <- lam.lists$lam1
   lam2 <- lam.lists$lam2
   n.lams <- length(lam1)*length(lam2)
