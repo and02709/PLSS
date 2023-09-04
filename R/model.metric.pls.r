@@ -22,9 +22,9 @@ model.metric.pls <- function(Y,X,mod,U,metric=c("MAD","WMAD","Deviance"),ncomp,Y
   }
   
   metric <-  switch(metric,
-                    MAD={plss::mad.pls(Y,Yhat)},
-                    WMAD={plss::wmad.pls(Y,Yhat)},
-                    Deviance={plss::deviance.pls(Y,Yhat)}
+                    MAD={PLSS::mad.pls(Y,Yhat)},
+                    WMAD={PLSS::wmad.pls(Y,Yhat)},
+                    Deviance={PLSS::deviance.pls(Y,Yhat)}
   )
   return(metric)
 }
