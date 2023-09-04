@@ -6,7 +6,7 @@
 #' @export
 
 uv.max.step <- function(X,Y,n.lam1,n.lam2,eps){
-  temp.svd <- plss::pls.svd(X,Y,1)
+  temp.svd <- PLSS::pls.svd(X,Y,1)
   max.u <- max(abs(temp.svd$u))-eps
   max.v <- max(abs(temp.svd$v))-eps
   step.u <- max.u/n.lam1
